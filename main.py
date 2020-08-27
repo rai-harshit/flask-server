@@ -3,6 +3,10 @@ import sqlalchemy
 
 app = Flask(__name__) #create the Flask app
 
+@app.route("/")
+def sayHello():
+    return "Hello World!"
+
 @app.route('/usage_data',methods=['POST'])
 def postJasonHandler():
     # Parse the json data receieved from the client.
@@ -63,4 +67,4 @@ def insertDataToDB(cleanedData):
     return 1
 
 if __name__ == '__main__':
-    app.run(debug=True, port=6969) #run app in debug mode on port 5000
+    app.run(host="127.0.0.1",debug=True, port=8080) #run app in debug mode on port 5000
