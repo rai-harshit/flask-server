@@ -5,7 +5,7 @@ app = Flask(__name__) #create the Flask app
 
 @app.route("/")
 def sayHello():
-    return "Hello World!"
+    return "Hello, glad to see you! -Team Balanced"
 
 @app.route('/usage_data',methods=['POST'])
 def postJasonHandler():
